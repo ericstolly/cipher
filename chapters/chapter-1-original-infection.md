@@ -1,5 +1,5 @@
 ## Chapter 1 (Original Infection)
-This chapter contains the breakdown of the original infection code used by "Cipher-Panel".
+This chapter contains the breakdown of the original infection code used by Cipher-Panel.
 
 ### Introduction
 The original infection code is a very simple snippet of code that can be inserted into any FiveM script that is used as a payload to download the malicious code.
