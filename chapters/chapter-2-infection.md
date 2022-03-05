@@ -85,8 +85,8 @@ Citizen.CreateThread(
 ```
 
 Yet agian.. just from looking at this code, we can gather a fair amount of information.
-  - The code writes many lines of code to a file.
-  - It appears to infect the default resources of FiveM.
+  - The code writes many lines of code different files. (io.open, write, close)
+  - It appears to infect the default resources of FiveM. (Due to the fact it writes lines that can be seen in fxmanifest.lua)
   - They are hiding function names encoded with UTF-8.
 
 We once again simply map the values of all the UTF-8 encoded strings to better understand what functions are being called and where.
