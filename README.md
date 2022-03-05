@@ -4,5 +4,5 @@ This repository contains the entire reversal of the malicious software for hire 
 ### Introduction
 This reversal is split into chapters, explaining how each part of the software works. You can click on the links below to skip to specific chapters.
 
-[Chapter 1 (Original Entry)](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-original-entry.md)
+[Chapter 1 (Original Entry)](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-original-entry.md) </br>
 [Chapter 2 (Infection)](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-2-infection.md)
