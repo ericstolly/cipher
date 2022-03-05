@@ -80,6 +80,6 @@ Enchanced_Tabs[15] = materials; (Junk Code)
     end)
 ```
 
-The final mapped code continuously calls an HTTP request to an endpoint that is provided to paid users. This endpoint can't be accessed normally as they have Cloudflare page rules set up to only accept the User-Agent that FiveM makes HTTP requests with (FXServer/PerformHttpRequest). The responseBody field returns the body from the endpoint that contains lua code for the next step of this fuck fest.
+The final mapped code continuously makes an HTTP request to an endpoint that is provided to paid users by Cipher-Panel. This endpoint can't be accessed normally as they have Cloudflare page rules set up to only accept the User-Agent that FiveM makes HTTP requests with (FXServer/PerformHttpRequest). The responseBody field returns the body from the endpoint that contains lua code for the next step of this fuck fest.
 
 [(Chapter 2 (What's obfuscation anyways?)](https://github.com/ericstolly/)
