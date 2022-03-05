@@ -2,7 +2,7 @@
 This chapter contains the breakdown of the infection code used by Cipher-Panel.
 
 ### Introduction
-The infection code is a somewhat obfuscated peice of code designed to modify server files with malicious code, the code is downloaded and ran via the entrry code in [Chapter 1](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-original-entry.md).
+The infection code is a somewhat obfuscated piece of code designed to modify server files with malicious code, the code is downloaded and ran via the entry code in [Chapter 1](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-original-entry.md).
 
 #### Original Code
 ```lua
@@ -84,8 +84,8 @@ Citizen.CreateThread(
 )
 ```
 
-Yet agian.. just from looking at this code, we can gather a fair amount of information.
-  - The code writes many lines of code different files. (io.open, write, close)
+Yet again.. just from looking at this code, we can gather a fair amount of information.
+  - The code writes many lines of code in different files. (io.open, write, close)
   - It appears to infect the default resources of FiveM. (Due to the fact it writes lines that can be seen in fxmanifest.lua)
   - They are hiding function names encoded with UTF-8.
 
@@ -206,6 +206,8 @@ The final mapped code adds obfuscated malcious code to the following files:
   - resources\[FiveM]\[system]\sessionmanager\client\empty.lua
   - resources\[FiveM]\[system]\sessionmanager\fxmanifest.lua
 
-Just from looking at the code written to these files, you get an understanding of the lack of intelligence these malcious users have. Whilst writing to the `fxmanifest.lua` file they lack the understanding to string break to include the quotation marks on the `description` line that the [default CFX file](https://github.com/citizenfx/cfx-server-data/blob/master/resources/%5Bsystem%5D/sessionmanager/fxmanifest.lua#L6) has.
+Just from looking at the code written to these files, you get an understanding of the lack of intelligence these malicious users have. Whilst writing to the `fxmanifest.lua` file they lack the understanding to string break to include the quotation marks on the `description` line that the [default CFX file](https://github.com/citizenfx/cfx-server-data/blob/master/resources/%5Bsystem%5D/sessionmanager/fxmanifest.lua#L6) has.
+
+The explanation and reversal of the files modified here are covered in the next chapter.
 
 [Chapter 3 (???)](https://github.com/ericstolly/)
