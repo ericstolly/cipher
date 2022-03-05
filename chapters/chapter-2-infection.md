@@ -201,9 +201,11 @@ Citizen.CreateThread(
     end
 )
 ```
+The final mapped code adds obfuscated malcious code to the following files:
+  - resources\[FiveM]\[system]\sessionmanager\server\host_lock.lua
+  - resources\[FiveM]\[system]\sessionmanager\client\empty.lua
+  - resources\[FiveM]\[system]\sessionmanager\fxmanifest.lua
 
-#### The final mapped code adds obfuscated malcious code to the following files:
-  - 
-  - 
+Just from looking at the code written to these files, you get an understanding of the lack of intelligence these malcious users have. Whilst writing to the `fxmanifest.lua` file they lack the understanding to string break to include the quotation marks on the `description` line that the [default CFX file](https://github.com/citizenfx/cfx-server-data/blob/master/resources/%5Bsystem%5D/sessionmanager/fxmanifest.lua#L6) has.
 
 [Chapter 3 (???)](https://github.com/ericstolly/)
