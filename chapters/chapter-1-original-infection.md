@@ -1,8 +1,8 @@
-## Chapter 1 (Original Infection)
-This chapter contains the breakdown of the original infection code used by Cipher-Panel.
+## Chapter 1 (Original Entry)
+This chapter contains the breakdown of the original entry code used by Cipher-Panel.
 
 ### Introduction
-The original infection code is a very simple snippet of code that can be inserted into any FiveM script that is used as a payload to download the malicious code.
+The original entry code is a very simple snippet of code that can be inserted into any FiveM script that is used as a payload to download the malicious code.
 
 The normal method for the sharing of this is through leaked scripts uploaded by users that only intend to gain access and extort people for money.
 
@@ -82,4 +82,4 @@ Enchanced_Tabs[15] = materials; (Junk Code)
 
 The final mapped code continuously makes an HTTP request to an endpoint that is provided to paid users by Cipher-Panel. This endpoint can't be accessed normally as they have Cloudflare page rules set up to only accept the User-Agent that FiveM makes HTTP requests with (FXServer/PerformHttpRequest). The responseBody field returns the body from the endpoint that contains lua code for the next step of this fuck fest.
 
-[Chapter 2 (What's obfuscation anyways?)](https://github.com/ericstolly/)
+[Chapter 2 (Infection)](https://github.com/ericstolly/)
