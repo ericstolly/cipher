@@ -2,7 +2,7 @@
 This chapter covers the payload code used in the malicious code to hire dubbed Cipher-Panel.
 
 ### Introduction
-The payload for this malicious software is provided to users who pay for access to said software that allows them to generate the payload code. Using this payload code they can then download FiveM scripts, modify them to include the payload code, and then upload them to popular FiveM script leaking websites and communities or even used by script developers and merchants to target specific servers.
+The payload for this malicious software is provided to users who pay for access that in turn allows them to generate the payload code. Using this payload code they can then download FiveM scripts, modify them to include the payload code, and then upload them to popular FiveM script leaking websites and communities or even used by script developers and merchants to target specific servers.
 
 #### Original Code
 ```lua
