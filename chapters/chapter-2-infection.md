@@ -1,8 +1,8 @@
 ## Chapter 2 (Infection)
-This chapter contains the breakdown of the infection code used by Cipher-Panel.
+This chapter covers the infection code used in the malicious code to hire dubbed Cipher-Panel.
 
 ### Introduction
-The infection code is a somewhat obfuscated piece of code designed to modify server files with malicious code, the code is downloaded and ran via the entry code in [Chapter 1](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-original-entry.md).
+The infection code for this malcious software is the best example of failed obfuscation the world has to offer, it is downloaded and ran via the payload code in [Chapter 1](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-payload.md).
 
 #### Original Code
 ```lua
@@ -84,10 +84,8 @@ Citizen.CreateThread(
 )
 ```
 
-Yet again.. just from looking at this code, we can gather a fair amount of information.
-  - The code writes many lines of code in different files. (io.open, write, close)
-  - It appears to infect the default resources of FiveM. (Due to the fact it writes lines that can be seen in fxmanifest.lua)
-  - They are hiding function names encoded with UTF-8.
+The code above is yet again using UTF-8 encoding for a few fields, it also contains the contents of the `fxmanifest.lua` file thus it's safe to assume it writes to that file. It also uses a fair amount of `write` so again, it's safe to assume it writes to other files.
+
 
 We once again simply map the values of all the UTF-8 encoded strings to better understand what functions are being called and where.
 
