@@ -53,7 +53,7 @@ Plain Text: https://cipher-panel.me/_i/i?to=l6Tr2
 ```
 
 #### Function Name Array Mapping
-```
+```diff
 Enchanced_Tabs[1] = Ench; (Junk Code)
 Enchanced_Tabs[2] = Support; (Junk Code)
 Enchanced_Tabs[3] = Host; (Junk Code)
@@ -63,10 +63,10 @@ Enchanced_Tabs[6] = Callbacks; (Junk Code)
 Enchanced_Tabs[7] = Source; (Junk Code)
 Enchanced_Tabs[8] = Hosting; (Junk Code)
 Enchanced_Tabs[9] = Event; (Junk Code)
-Enchanced_Tabs[10] = PerformHttpRequest;
-Enchanced_Tabs[11] = assert; (Junk Code)
++ Enchanced_Tabs[10] = PerformHttpRequest;
++ Enchanced_Tabs[11] = assert;
 Enchanced_Tabs[12] = server; (Junk Code)
-Enchanced_Tabs[13] = load; (Junk Code)
++ Enchanced_Tabs[13] = load;
 Enchanced_Tabs[14] = Spawn; (Junk Code)
 Enchanced_Tabs[15] = materials; (Junk Code)
 ```
