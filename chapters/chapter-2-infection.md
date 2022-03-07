@@ -2,7 +2,7 @@
 This chapter covers the infection code used in the malicious code to hire dubbed Cipher-Panel.
 
 ### Introduction
-The infection code for this malcious software is the best example of failed obfuscation the world has to offer, it is downloaded and ran via the payload code in [Chapter 1](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-payload.md).
+The infection code for this malicious software is one of the best examples of failed obfuscation the world has to offer. The code is downloaded and excuted via the payload code we covered in [Chapter 1](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-payload.md).
 
 #### Original Code
 ```lua
@@ -87,44 +87,42 @@ Citizen.CreateThread(
 The code above is yet again using UTF-8 encoding for a few fields, it also contains the contents of the `fxmanifest.lua` file thus it's safe to assume it writes to that file. It also uses a fair amount of `write` so again, it's safe to assume it writes to other files.
 
 
-We once again simply map the values of all the UTF-8 encoded strings to better understand what functions are being called and where.
+We once again simply decode the UTF-8 encoded strings and normalize the function names and fields.
 
-#### UTF-8 Function Variable Reversal
+#### UTF-8 String Reversal
 ```
 Variable: kaskyWVklaWSErrrnVBB
-Encoded: \x73\x65\x73\x73\x69\x6f\x6e\x6d\x61\x6e\x61\x67\x65\x72
-Plain Text: sessionmanager
+Input: \x73\x65\x73\x73\x69\x6f\x6e\x6d\x61\x6e\x61\x67\x65\x72
+Output: sessionmanager
 
 Variable: kakkyWVklaWSErrrnVBB
-Encoded: \x2f\x73\x65\x72\x76\x65\x72\x2f\x68\x6f\x73\x74\x5f\x6c\x6f\x63\x6b\x2e\x6c\x75\x61
-Plain Text: /server/host_lock.lua
+Input: \x2f\x73\x65\x72\x76\x65\x72\x2f\x68\x6f\x73\x74\x5f\x6c\x6f\x63\x6b\x2e\x6c\x75\x61
+Output: /server/host_lock.lua
 
 Variable: YBLgfdYggNgxwqazyGsb
-Encoded: \x2f\x73\x65\x72\x76\x65\x72\x2f\x6c\x69\x63\x65\x6e\x63\x65\x2e\x74\x78\x74
-Plain Text: /server/licence.txt
+Input: \x2f\x73\x65\x72\x76\x65\x72\x2f\x6c\x69\x63\x65\x6e\x63\x65\x2e\x74\x78\x74
+Output: /server/licence.txt
 
 Variable: ZudnizosZzhdkeuSzndh
-Encoded: \x2f\x73\x65\x72\x76\x65\x72\x2f\x67\x61\x6d\x65\x2e\x6c\x6f\x67
-Plain Text: /server/game.log
+Input: \x2f\x73\x65\x72\x76\x65\x72\x2f\x67\x61\x6d\x65\x2e\x6c\x6f\x67
+Output: /server/game.log
 
 Variable: eVSsCsytJpinTgqcGOIz
-Encoded: \x2f\x63\x6c\x69\x65\x6e\x74\x2f\x65\x6d\x70\x74\x79\x2e\x6c\x75\x61
-Plain Text: /client/empty.lua
+Input: \x2f\x63\x6c\x69\x65\x6e\x74\x2f\x65\x6d\x70\x74\x79\x2e\x6c\x75\x61
+Output: /client/empty.lua
 
 Variable: TeRfIyyWqxeqaJtVpjHO
-Encoded: \x2f\x66\x78\x6d\x61\x6e\x69\x66\x65\x73\x74\x2e\x6c\x75\x61
-Plain Text: /fxmanifest.lua
+Input: \x2f\x66\x78\x6d\x61\x6e\x69\x66\x65\x73\x74\x2e\x6c\x75\x61
+Output: /fxmanifest.lua
 
 Variable: aOSpqxARmZAARgJKFkSP
-Encoded: \x72\x65\x73\x6f\x75\x72\x63\x65\x73\x2f\x5b\x73\x79\x73\x74\x65\x6d\x5d\x2f\x73\x65\x73\x73\x69\x6f\x6e\x6d\x61\x6e\x61\x67\x65\x72\x2f\x73\x65\x72\x76\x65\x72\x2f\x6c\x69\x63\x65\x6e\x63\x65\x2e\x74\x78\x74
-Plain Text: resources/[system]/sessionmanager/server/licence.txt
-
-Variable: raSdVeoRVnbTqXAqXrWO
-Encoded: (Not Encoded)
-Plain Text: GetResourcePath
+Input: \x72\x65\x73\x6f\x75\x72\x63\x65\x73\x2f\x5b\x73\x79\x73\x74\x65\x6d\x5d\x2f\x73\x65\x73\x73\x69\x6f\x6e\x6d\x61\x6e\x61\x67\x65\x72\x2f\x73\x65\x72\x76\x65\x72\x2f\x6c\x69\x63\x65\x6e\x63\x65\x2e\x74\x78\x74
+Output: resources/[system]/sessionmanager/server/licence.txt
 ```
 
-#### Final Mapped Code
+The UTF-8 encoded strings were all files and directories, they are used in conjunction with IO operations thus we get infected files list.
+
+#### Final Mapped and Normalised Code
 ```lua
 Citizen.CreateThread(
     function()
@@ -199,13 +197,12 @@ Citizen.CreateThread(
     end
 )
 ```
-The final mapped code adds obfuscated malcious code to the following files:
-  - resources\[FiveM]\[system]\sessionmanager\server\host_lock.lua
-  - resources\[FiveM]\[system]\sessionmanager\client\empty.lua
-  - resources\[FiveM]\[system]\sessionmanager\fxmanifest.lua
 
-Just from looking at the code written to these files, you get an understanding of the lack of intelligence these malicious users have. Whilst writing to the `fxmanifest.lua` file they lack the understanding to string break to include the quotation marks on the `description` line that the [default CFX file](https://github.com/citizenfx/cfx-server-data/blob/master/resources/%5Bsystem%5D/sessionmanager/fxmanifest.lua#L6) has.
+After the mapping and normalization of the code, we can see that it writes to the files[^1] found in the UTF-8 string reversal. It is also in this code that we gather more evidence of the intelligence the authors of this malicious software have, they lacked the understanding to string escape for the quotation marks in their `fxmanifest.lua` infection oppose to the original which includes quotations marks in the `description` value of the [original manifest file](https://github.com/citizenfx/cfx-server-data/blob/master/resources/%5Bsystem%5D/sessionmanager/fxmanifest.lua#L6). This, in turn, provides an indicator for the detection for this software [^2].
 
-The explanation and reversal of the files modified here are covered in the next chapter.
+The files modified here are covered in the next chapter.
+
+[^1]: `resources\[FiveM]\[system]\sessionmanager\server\host_lock.lua`, `resources\[FiveM]\[system]\sessionmanager\client\empty.lua` and `resources\[FiveM]\[system]\sessionmanager\fxmanifest.lua`.
+[^2]: Checking that the `fxmanifest.lua` file doesn't include quotation marks on the `description` line would confirm either modification or infection.
 
 [Chapter 3 (???)](https://github.com/ericstolly/)
