@@ -1,5 +1,5 @@
 # Cipher-Panel Reversal 
-This repository contains the complete reverse-engineered breakdown of the malicious software for hire targeting FiveM servers called Cipher-Panel. The content on this repository is the collective works of the entire [MapleHearts](https://www.maplehearts.net/) development team.
+This repository contains the complete reverse-engineered breakdown of the malicious software for hire targeting FiveM servers called Cipher-Panel. The content in this repository is the collective works of the entire [MapleHearts](https://www.maplehearts.net/) development team.
 
 ### Content
 The content is split into chapters, explaining how each part of the software works.
