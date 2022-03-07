@@ -4,7 +4,7 @@ This repository contains the complete reverse-engineered breakdown of the malici
 ### Content
 The content is split into chapters, explaining how each part of the software works.
 
-[Chapter 1 (Original Entry)](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-original-entry.md) </br>
+[Chapter 1 (Payload)](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-1-payload.md) </br>
 [Chapter 2 (Infection)](https://github.com/ericstolly/cipher/blob/main/chapters/chapter-2-infection.md)
 
 ### Frequently Asked Questions
