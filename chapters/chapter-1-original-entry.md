@@ -43,7 +43,7 @@ Just from looking at this code, we can gather a fair amount of information.
   - The code is designed to look clean by using function names that aren't associated with malicious code such as **random_char**.
   - They are hiding function names encoded with UTF-8 in an array that they convert rather than keeping function names in all of the malicious functions.
 
-This being said we have to map the values to better understand the code. This is done by turning `Enchanced_Tabs[13]` into the corresponding index in the UTF-8 encoded array. We will also take this chance to normalize the field names and remove the junk code used to obscure the real functionality.
+This being said we have to map the values to better understand the code. This is done by turning `Enchanced_Tabs` into the corresponding index in the UTF-8 encoded array. We will also take this chance to normalize the field names and remove the junk code used to obscure the real functionality.
 
 #### UTF-8 Array Reversal
 ```
@@ -70,6 +70,8 @@ Enchanced_Tabs[12] = server; (Junk Code)
 Enchanced_Tabs[14] = Spawn; (Junk Code)
 Enchanced_Tabs[15] = materials; (Junk Code)
 ```
+
+The only used functions are highlighted, the rest are simply random functions designed to hide the used functions.
 
 #### Final Mapped Code
 ```lua
